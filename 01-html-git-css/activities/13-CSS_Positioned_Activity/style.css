@@ -1,0 +1,34 @@
+* {
+    box-sizing: border-box;
+    text-align: center;
+  }
+  body {
+      font-size: 20px;
+      line-height: 30px;
+  }
+  .title {
+      position: fixed;
+      float: left;
+  }
+  .main-box {
+      padding: 20px;
+      border: 1px solid black;
+      color: black;
+      background: gray;
+      position: fixed;
+      width: 150px;
+      height: 150px;
+   
+  }
+  .first-div {
+      position: absolute;
+      padding: 10px;
+  }
+  .parent-box {
+      background: gray;
+      padding: 50px, 80px, 50px, 80px;
+      position: relative;
+      margin-top: 40%;
+      float: left;
+      margin-left: 40%;
+  }

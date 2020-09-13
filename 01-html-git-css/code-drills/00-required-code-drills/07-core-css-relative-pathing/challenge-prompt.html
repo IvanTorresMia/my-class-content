@@ -15,25 +15,45 @@
         /* Set the width of each image */
 
         /* Add some padding around each image */
+        img {
+            width: 14%;
+            padding: 20px;
+        }
+        .first-row img {
+            display: table-row-group;
+            margin-right: auto;
+            margin-left: auto;
+        }
+        .third-row img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
     /* ============================================ */
 </style>
 
 <body>
-    <!-- Create an image element that displays the `cat-on-laptop.jpg` image -->
-
-    <!-- Create an image element that displays the  `basket-kitty.jpg` image -->
-
-    <!-- Create an image element that displays the `dog-glasses-suit.jpg` image -->
-
-    <!-- Create an image element that displays the `dog/puppy/basket-puppies.jpg` image -->
-
-    <!-- Create an image element that displays the `fatbirdy.jpg` image -->
-
-    <!-- Create an image element that displays the `bird/cool-bird.jpg` image -->
-
-    <!-- Create an image element that displays the `squirrel-sandbox.jpg` image -->
-
+    <div class="first-row">
+        <!-- Create an image element that displays the `cat-on-laptop.jpg` image -->
+        <img src="../07-core-css-relative-pathing/images/cat/kitty/cat-on-laptop.jpg" alt="Cat on laptop">
+        <!-- Create an image element that displays the  `basket-kitty.jpg` image -->
+        <img src="../07-core-css-relative-pathing/images/cat/kitty/kitten/basket-kitty.jpg" alt="Kitty in a basket">
+        <!-- Create an image element that displays the `dog-glasses-suit.jpg` image -->
+        <img src="../07-core-css-relative-pathing/images/dog/dog-glasses-suit.jpg" alt="Dog wearing glasses">
+        <!-- Create an image element that displays the `dog/puppy/basket-puppies.jpg` image -->
+    </div>
+    <div class="second-row">
+        <img src="../07-core-css-relative-pathing/images/dog/puppy/basket-puppies.jpg" alt="dog in a basket">
+        <!-- Create an image element that displays the `fatbirdy.jpg` image -->
+        <img src="../07-core-css-relative-pathing/images/fatbirdy.jpg" alt="a fat bird">
+        <!-- Create an image element that displays the `bird/cool-bird.jpg` image -->
+        <img src="../07-core-css-relative-pathing/images/bird/cool-bird.jpg" alt="super cool bird">
+    </div>
+    <div class="third-row">
+        <!-- Create an image element that displays the `squirrel-sandbox.jpg` image -->
+        <img src="../07-core-css-relative-pathing/images/squirrel-sandbox.jpg" alt="Squirl in a sandbox image">
+    </div>
 </body>
 
 </html>

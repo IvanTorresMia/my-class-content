@@ -1,0 +1,43 @@
+body {
+    font-weight: 200;
+    font-style: italic;
+    font-stretch: normal;
+}
+
+h1 {
+    font-weight: bolder;
+    color: aqua;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+h3 {
+font-weight: lighter;
+color: blueviolet;
+}
+
+h4 {
+    font-weight: lighter;
+    color: aqua
+
+}
+
+.p1 {
+    line-height: 0fr;
+    font-family: monospace;
+    font-weight: lighter;
+    font-size: 15px;
+}
+
+.p2{
+    line-height: 0fr;
+    font-family: monospace;
+    font-weight: lighter;
+    font-size: 15px;
+}
+
+p3 {
+    line-height: 0fr;
+    font-family: monospace;
+    font-weight: lighter;
+    font-size: 15px;
+}
