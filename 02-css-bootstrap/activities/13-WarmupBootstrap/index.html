@@ -1,22 +1,45 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-
-    <title>Hello, world!</title>
-  </head>
-  <body>
-    <h1>Hello, world!</h1>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstarpt</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-  </body>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="container-fluid">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand" href="#">
+        <img src="data:image/png;base64,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" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+        Bootstrap
+      </a>
+    </nav>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+</body>
 </html>

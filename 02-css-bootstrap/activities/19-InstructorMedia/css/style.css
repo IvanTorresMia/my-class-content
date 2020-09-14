@@ -60,9 +60,81 @@ body {
   is either 768px or less.
 */
 
+@media screen and (min-width: 1000px) {
+  body {
+    background-color: fuchsia;
+    /* The wrapper's width will be 600px */
+  }
+  .wrapper {
+    width: 400px;
+    padding: 30px;
+  }
+  #main-content {
+  /* Positioning */
+    float: none;
+   
+  /* Visual */
+    background: aquamarine;
+  }
+  #sidebar {
+    /* Positioning */
+    margin-top: 10px;
+    float: none;
+    /* Visual */
+    background: honeydew;
+  }
+  
+  /*Adopting a Pseudo Element*/
+  /*https://developer.mozilla.org/en-US/docs/Web/CSS/::first-line*/
+  p::first-line {
+    color: blue;
+    font-variant: small-caps;
+  }
+
+  
+  
+
+  }
 
 
-@media screen and (max-width: 768px) {
+
+@media screen and (max-width: 900px) {
+  body {
+    background-color: aquamarine;
+    /* The wrapper's width will be 600px */
+  }
+  .wrapper {
+    width: 300px;
+    padding: 10px;
+  }
+  #main-content {
+  /* Positioning */
+    float: none;
+   
+  /* Visual */
+    background: blue;
+  }
+  #sidebar {
+    /* Positioning */
+    margin-top: 10px;
+    float: none;
+    /* Visual */
+    background: yellow;
+  }
+  
+  /*Adopting a Pseudo Element*/
+  /*https://developer.mozilla.org/en-US/docs/Web/CSS/::first-line*/
+  p::first-line {
+    color: blue;
+    font-variant: small-caps;
+  }
+
+  
+  
+
+  }
+
+@media screen and (max-width: 800px) {
   /* The body's bg color will be #333 */
   body {
     background-color: #333;
@@ -100,8 +172,3 @@ body {
  
 }
 
-
-@media screen and (max-width: 400px) {
-/**/
-
-  }
