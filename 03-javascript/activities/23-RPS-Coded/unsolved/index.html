@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Rock Paper Scissors Part 1</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // Creates an array that lists out all of the options (Rock, Paper, or Scissors).
+      var computerChoices = ["r", "p", "s"];
+      
+      // Creating variables to hold the number of wins, losses, and ties. They start at 0.
+      var wins = 0;
+      var losses = 0;
+      var ties = 0;
+
+        // doing this for 
+        for(i = 0; i < 10; i++) {
+            // Generating a random number.
+            var computerRandom = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+            var playerChoice = prompt("Choose r, p, s");
+            playerChoice = playerChoice.toLowerCase()
+
+            // Checking if player gave good input
+            if (playerChoice === "r" || playerChoice === "p" || playerChoice === "s") {
+                // Win loose conditions
+                if ((playerChoice === "r" && computerRandom === "s") ||
+                (playerChoice === "s" && computerRandom === "p") ||
+                (playerChoice === "p" && computerRandom === "r")) {
+                  wins++;
+                  alert("You've won " + wins + " times");
+                } else if (playerChoice === computerRandom) { 
+                  ties++;
+                  alert("you have tied " + ties + " times");
+                } else {
+                  losses++;
+                  alert("you have lost " + losses + " times");
+                }
+            } else {
+              alert("You gave bad input");
+            }
+        }
+
+        console.log("you won " + wins + " and you've lost " + losses + " and you have " + ties + " ties");
+
+     
+    </script>
+  </body>
+</html>

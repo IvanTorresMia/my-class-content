@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var steak = confirm("Do you like steak?");
+        var chicken = confirm("Do you like chicken?");
+        var age = prompt("How old are you?");
+        if (steak && age >= 21) {
+            var kindOfSteak = prompt("What kind of steak do you like?")
+            document.write("You like " + kindOfSteak + " ,very cool." + " and you are " + age + " years too old")
+        } else if (chicken && age <= 21) {
+            var kindOfChicken = prompt("What kind of Chicken do you like?")
+            document.write("You like " + kindOfChicken + " That's rad" + " and you're " + age + " years too young")
+        } else {
+            document.write("Dude you suck")
+        };
+    </script>
+</body>
+</html>
