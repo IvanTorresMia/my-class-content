@@ -1,6 +1,12 @@
 // declare a variable named ourArray and assign an empty array to it
+ourArray = [];
+ourArray.push(1);
+ourArray.push("Hello");
+ourArray.push(false);
 
-
+for(i = 0; i < ourArray.length; i++){
+console.log(ourArray[i]);
+}
 // we can `push` values into an array with the push method. Documentation can be found here:
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push
 
@@ -28,11 +34,11 @@
 console.log("--------------------------Seperator 1--------------------------");
 
 // declare a variable named oneToTen and assign it an array containing the numbers from 1 to 10
-
+const oneToTen = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 // console log the element at index 4
 
-
+console.log(oneToTen[4]);
 // console log the element at index 7
 
 

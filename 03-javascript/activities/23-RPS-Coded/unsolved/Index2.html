@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Sissors</title>
+</head>
+<body>
+    <script type="text/javascript">
+    
+        // Make an array of the computer choices
+        var computerChoices = ["r", "p", "s"];
+
+        // Varibles to keep score
+        var wins = 0;
+        var losses = 0;
+        var ties = 0;
+        
+        
+        for(i = 0; i < 10; i++){
+            var randomChoice = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+            var userPromt = prompt("type r, p, or s to begin playing this game");
+            var userPromt = userPromt.toLowerCase();
+            
+            if (userPromt === "r" || userPromt === "s" || userPromt === "p") {
+            // ALL OF THE WINNING SENARIOS
+            if ((userPromt === "r" && randomChoice === "s") ||
+                (userPromt === "s" && randomChoice === "p") ||
+                (userPromt === "p" && randomChoice === "r")) {
+                    wins++;
+                    alert("You have won this round");
+                } else if (userPromt === randomChoice) {
+                    ties++;
+                    alert("You have tied");
+                } else {
+                    losses++;
+                    alert("you have lost this round");
+                }
+            } else {
+                alert("this is not a valid answer")
+            }
+        }
+
+        document.write("You have won " + wins + ", and you have lost " + losses + ", and you have tied " + ties + "!")
+    
+    </script>
+</body>
+</html>
