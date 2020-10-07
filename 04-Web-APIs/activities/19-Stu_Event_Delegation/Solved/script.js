@@ -1,4 +1,6 @@
 
+// Hooks for everything! 
+
 var addBtn = document.querySelector("#add-btn");
 var peopleListEl = document.querySelector("#people-list");
 var nameEl = document.querySelector("#name");
@@ -11,6 +13,7 @@ var saveBtn = document.querySelector("#save");
 var people = [{ name: "Bob" }];
 var currentId = 0;
 
+// This Adds person to list.
 function addPersonToList(event) {
   event.preventDefault();
   var name = nameEl.value;

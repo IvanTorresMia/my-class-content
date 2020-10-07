@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List </title>
+</head>
+
+<body>
+    <h1 style="padding: 20px">He is my to Do list!</h1>
+    <hr>
+    <form>
+        <h3 style="margin-top: auto; margin-left: 20px;">Write my to do's</h3>
+        <input style="margin-left: 20px;" id="toDoInput" type="text"> <button id="submit" style="border: 2px solid black; padding: 10px;">Submit</button>
+        <ul id="list">
+            <!-- append list here -->
+        </ul>
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            var liArr = JSON.parse(localStorage.getItem("liItems")) || [];
+
+
+            $("#submit").on("click", function(event) {
+                var input = $("#toDoInput").val()
+
+                var ulList = $("#list");
+                event.preventDefault();
+                var li = $("<li>")
+                var textLi = li.text(input);
+                liArr.push(input);
+                ulList.append(textLi);
+                localStorage.setItem("liItems", JSON.stringify(liArr));
+                console.log(liArr);
+
+            })
+
+            for (i = 0; i < liArr.length; i++) {
+                ulList = $("#list");
+                var liItem = $("<li>");
+                var litext = liItem.text(liArr[i])
+                ulList.append(litext);
+            }
+
+
+        })
+    </script>
+</body>
+
+</html>

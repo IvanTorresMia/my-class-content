@@ -25,10 +25,11 @@ function renderTodos() {
 function init() {
   // Write code here to check if there are todos in localStorage
   // If so, parse the value from localStorage and assign it to the todos variable
-
+  
   // Store updated todos in localStorage, re-render the list
   storeTodos();
   renderTodos();
+  
 }
 
 function storeTodos() {

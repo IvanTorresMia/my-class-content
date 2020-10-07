@@ -24,8 +24,8 @@ function close() {
   modalEl.style.display = "none";
 }
 
-function handleClick() {
-  // Use event delegation to handle when the user clicks "edit"
+function handleClick(event) {
+
 }
 
 closeEl.addEventListener("click", close);

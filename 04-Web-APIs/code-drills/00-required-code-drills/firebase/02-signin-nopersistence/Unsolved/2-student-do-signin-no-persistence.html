@@ -3,101 +3,143 @@
 <html lang="en-us">
 
 <head>
+    <meta charset="UTF-8" />
+    <title>Sign-Up Today!</title>
 
-  <meta charset="UTF-8">
-  <title>Sign-Up Today!</title>
-
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
 </head>
 
 <body>
+    <div class="container">
+        <br />
 
-  <div class="container">
+        <!-- Jumbotron -->
+        <div class="jumbotron">
+            <h1 class="text-center">Sign-Up Today!</h1>
+        </div>
 
-    <br>
+        <div class="row">
+            <!-- Sign-Up Card-->
+            <div class="col-lg-6">
+                <div class="card card-default">
+                    <div class="card-header">New Member Sign-Up</div>
+                    <div class="card-body">
+                        <!-- Sign-up Form (note the various input "types")-->
+                        <form role="form">
+                            <div class="form-group row">
+                                <label for="name-input">Name:</label>
+                                <input class="form-control" id="name-input" type="text" />
+                            </div>
+                            <div class="form-group row">
+                                <label for="email-input">Email:</label>
+                                <input class="form-control" id="email-input" type="email" />
+                            </div>
+                            <div class="form-group row">
+                                <label for="age-input">Age:</label>
+                                <input class="form-control" id="age-input" type="number" />
+                            </div>
+                            <div class="form-group row">
+                                <label for="comment-input">How did you hear about us?</label>
+                                <textarea class="form-control" id="comment-input" rows="5"></textarea>
+                            </div>
+                            <button class="btn btn-default" id="add-user" type="submit">
+                  Submit
+                </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
 
-    <!-- Jumbotron -->
-    <div class="jumbotron">
-      <h1 class="text-center">Sign-Up Today!</h1>
+            <!-- Most Recent Member card -->
+            <div class="col-lg-6">
+                <div class="card card-default">
+                    <div class="card-header">Most Recent Member</div>
+                    <div class="card-body" id="recent-member">
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="row">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
 
-      <!-- Sign-Up Card-->
-      <div class="col-lg-6">
-        <div class="card card-default">
-          <div class="card-header">
-            New Member Sign-Up
-          </div>
-          <div class="card-body">
-
-            <!-- Sign-up Form (note the various input "types")-->
-            <form role="form">
-              <div class="form-group row">
-                <label for="name-input">Name:</label>
-                <input class="form-control" id="name-input" type="text">
-              </div>
-              <div class="form-group row">
-                <label for="email-input">Email:</label>
-                <input class="form-control" id="email-input" type="email">
-              </div>
-              <div class="form-group row">
-                <label for="age-input">Age:</label>
-                <input class="form-control" id="age-input" type="number">
-              </div>
-              <div class="form-group row">
-                <label for="comment-input">How did you hear about us?</label>
-                <textarea class="form-control" id="comment-input" rows="5"></textarea>
-              </div>
-              <button class="btn btn-default" id="add-user" type="submit">Submit</button>
-            </form>
-          </div>
-        </div>
-      </div>
-
-      <!-- Most Recent Member card -->
-      <div class="col-lg-6">
-        <div class="card card-default">
-          <div class="card-header">
-            Most Recent Member
-          </div>
-          <div class="card-body" id="recent-member">
-            <h2 id="name-display">Jimmy John</h2>
-            <h4 id="email-display">Email: jimmy@john.edu</h4>
-            <h4 id="age-display">Age: 27</h4>
-            <p id="comment-display">I'm signing up, because I want to spread sandwiches to the world.</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-
-  <!-- jQuery -->
-  <script src="https://code.jquery.com/jquery.js"></script>
-
-  <!-- Script -->
-  <script>
-    // ========================================= START CODING BELOW!!
-
-    // Capture Button Click
-    $("#add-user").on("click", function(event) {
-      event.preventDefault();
-
-      // Capture User Inputs and store them into variables
+    <!-- Script -->
+    <script>
+        // ========================================= START CODING BELOW!!
+        var people = JSON.parse(localStorage.getItem("people")) || [];
 
 
-      // Console log each of the user inputs to confirm we are receiving them correctly
+        // Capture Button Click
+        $("#add-user").on("click", function(event) {
+            event.preventDefault();
 
+            var recentMember = $("#recent-member");
+            var nameInput = $("#name-input").val();
+            var emailInput = $("#email-input").val();
+            var ageInput = $("#age-input").val();
+            var commentInput = $("#comment-input").val();
 
-      // Output all of the new information into the relevant HTML sections
-    });
+            recentMember.empty();
+            var person = {
+                name: nameInput,
+                email: emailInput,
+                age: ageInput,
+                comment: commentInput,
+            };
 
-  </script>
+            people.push(person);
 
+            localStorage.setItem("people", JSON.stringify(people));
+
+            renderList(people)
+
+            nameInput.val("");
+            emailInput.val("");
+            ageInput.val("");
+            commentInput.val("");
+
+        });
+
+        function renderList(x) {
+            var recentMember = $("#recent-member");
+
+            for (i = 0; i < x.length; i++) {
+                var headerTwo = $("<h2>");
+                var headerFour = $("<h4>");
+                var headerFour2 = $("<h4>");
+                var ptag = $("<p>");
+
+                headerTwo.text(x[i].name);
+                headerFour.text(x[i].email);
+                headerFour2.text(x[i].age.toString());
+                ptag.text(x[i].comment);
+
+                recentMember.append(headerTwo, headerFour, headerFour2, ptag);
+            }
+        }
+        renderList(people)
+            // Output all of the new information into the relevant HTML sections
+            // headerTwo.text(person.name);
+            // headerFour.text(person.email);
+            // headerFour2.text(person.age.toString());
+            // ptag.text(person.comment);
+
+        // grab the inputs
+        // create a person object
+        // put the person into the overall people array
+        // erase your list of members div
+        // re-render the people array (loop through it) onto the list of members div with the new guy
+
+        // every time you refresh, grab the people array from local storage and loop through the people array and render them onto the list of members div
+
+        //     // Storing all the people with the newly added person
+        //     localStorage.setItem("people", JSON.stringify(people));
+        // }
+
+        // renderList();
+    </script>
 </body>
 
 </html>
